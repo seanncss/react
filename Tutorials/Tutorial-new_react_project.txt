@@ -1,0 +1,75 @@
+%% Creating a new React project
+% Summary commands (explanations follow after)
+mkdir ./app
+cd ./app
+npm init
+npm i -S react react-dom react-scripts
+npm i -D babel-core babel-loader babel-preset-react webpack webpack-dev-server html-webpack-plugin
+touch ./.babelrc /webpack.config.js
+
+% EXPLANATIONS
+
+% Make a project folder
+mkdir ./hello-world
+cd ./hello-world
+
+
+%% Install required modules
+
+% Create a package.json file: follow the prompts (just hit enter if answer is blank)
+npm init
+
+
+% Install React; `install` can be abbreviated to `i`, and `--save` as `-S`
+npm install --save react
+
+% This command does the following:
+- the save flag adds an object named "dependencies" to the package.json file
+- creates a folder named node_modules
+- now you can access React in your files with the code var React = require('react')
+
+% Install react-dom
+npm i -S react-dom
+
+
+% Install Babel (compile JSX into regular JavaScript
+% Use --save-dev [-D] instead of --save because we will only be using babel in development mode. When a React app is shipped into production, it no longer needs to make transformations as they will be hard-coded in place.
+% Also install two other babel-related modules: named babel-loader and babel-preset-react
+
+npm i -D babel-core babel-loader babel-preset-react
+
+% Write a babel config file
+touch ./.babelrc
+
+% Install webpack, webpack-dev-server, and html-webpack-plugin
+npm i -D webpack webpack-dev-server html-webpack-plugin
+
+% In the outer-most layer of your root directory:
+touch ./webpack.config.js
+
+
+
+% CONFIGURATION
+
+% Babel
+echo "{ presets: ['react'] }" > ./.babelrc
+
+% Webpack
+
+% Tell webpack what transformations to use - the output is what the browser actually sees
+% 1 - What JavaScript file it should transform
+% 2 - Which transformations it should use on that file
+% 3 - Where the new, transformed file should go
+
+vi ./webpack.config.js
+
+% Paste in the following:
+module.exports = {};
+var React = require('react');
+var ReactDom = require('react-dom');
+var App = require('./components/App);
+
+ReactDOM.render(
+	<App />
+	document.getElementById('app')
+);
