@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import ToDoList from "./ToDoList";
 import ToDoForm from "./ToDoForm";
+import initialToDos from './../assets/data.json';
 
-const initialToDos = [{
-    "id": 1,
-    "task": "Placeholder Task",
-    "done": false
-  }, {
-    "id": 2,
-    "task": "Do laundry",
-    "done": true
-  }
-]
+// const initialToDos = [{
+//     "id": 1,
+//     "task": "Placeholder Task",
+//     "done": false
+//   }, {
+//     "id": 2,
+//     "task": "Do laundry",
+//     "done": true
+//   }
+// ]
 
 const Main = () => {
   
