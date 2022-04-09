@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const ToDoItem = (props) => {
     const { id, task, done, handleToggle } = props
     const handleClick = (event) => {
-        event.preventDefault()
+        // event.preventDefault()
         handleToggle(event.currentTarget.id)
 }
    return (
